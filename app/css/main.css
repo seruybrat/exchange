@@ -1,0 +1,264 @@
+@font-face {
+  font-family: "softengi";
+  src: url("../fonts/icons/softengi.woff");
+  src: url("../fonts/icons/softengi.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url("../fonts/avenir/Avenir-Book.woff");
+  src: url("../fonts/avenir/Avenir-Book.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: "softengi";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-arrow:before {
+  content: '\e800'; }
+
+.icon-download:before {
+  content: '\e801'; }
+
+.icon-exchange-icon:before {
+  content: '\e802'; }
+
+.icon-log-out:before {
+  content: '\e803'; }
+
+.icon-notifications:before {
+  content: '\e804'; }
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Avenir Book', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: normal;
+  background-color: #eaf0f3; }
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.col-6 {
+  width: 60%;
+  float: left; }
+
+.col-4 {
+  width: 40%;
+  float: left; }
+
+.list, .nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.link, .nav__link {
+  text-decoration: none; }
+  .link:hover, .nav__link:hover {
+    cursor: pointer; }
+
+.container {
+  width: 1116px;
+  margin: 0 auto; }
+
+.wrapper {
+  height: 350px;
+  color: #fff;
+  background: url(../img/bg-image.svg) no-repeat;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.header {
+  padding: 32px 50px 0 55px; }
+  .header__logo {
+    float: left;
+    font-size: 1.667em;
+    font-weight: bold; }
+  .header__nav {
+    float: right; }
+
+.nav__item {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 45px;
+  font-weight: bold; }
+
+.nav__link_active {
+  position: relative; }
+  .nav__link_active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    background-color: #fa6d74;
+    border: solid 2px #504ead;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+
+.nav__icon {
+  font-size: 1.333em;
+  padding-left: 3px; }
+
+.icon_dark {
+  color: #9390dc; }
+
+.top-form {
+  padding-top: 50px;
+  text-align: right; }
+  .top-form * {
+    display: inline-block;
+    vertical-align: middle; }
+
+.input {
+  display: inline-block;
+  width: 69px;
+  color: #fff;
+  font-size: 1.833em;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
+  .input:focus {
+    outline: none; }
+
+.form {
+  text-align: left; }
+
+.select {
+  position: relative;
+  margin: 0 25px; }
+
+.select-styled {
+  display: inline-block;
+  padding: 4px 31px 4px 15px;
+  color: #fff;
+  font-size: 1.083em;
+  letter-spacing: 0.5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  cursor: pointer; }
+  .select-styled:before {
+    content: '\e800';
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: .4em;
+    font-family: "softengi"; }
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: inherit;
+  cursor: pointer; }
+
+.select-hidden {
+  display: none; }
+
+.select-options li[rel="hide"] {
+  display: none; }
+
+.select-options li {
+  display: block;
+  margin: 0;
+  padding: 5px 25px 5px 15px;
+  font-size: 1.083em;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in; }
+
+.lbl {
+  font-size: 1.167em;
+  opacity: .6; }
+
+.form-group {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  margin-right: 70px;
+  padding-right: 45px; }
+
+.summ {
+  margin-right: 25px; }
+  .summ__text {
+    display: block;
+    color: #fff;
+    opacity: .6; }
+  .summ__value {
+    display: inline-block;
+    font-size: 1.667em;
+    font-weight: bold;
+    vertical-align: bottom; }
+  .summ__currency {
+    font-size: 0.7em;
+    text-transform: uppercase; }
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 25px;
+  color: #2a2a44;
+  font-size: 1.083em;
+  font-weight: bold;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  background-color: linear-gradient(to bottom, #f1f1ff, #ffffff);
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer; }
+  .btn__icon {
+    font-size: 1.8em;
+    color: #9a98e2; }
+
+.main {
+  margin-top: -160px;
+  padding: 41px 57px;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }

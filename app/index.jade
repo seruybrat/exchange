@@ -1,0 +1,131 @@
+doctype html
+html(lang='ru' ng-app="app")
+
+	head
+		meta(charset='utf-8')
+
+		title Заголовок
+		meta(name='description', content='')
+
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+		link(rel="stylesheet", href="css/main.css")
+
+		
+
+	body
+		.wrapper
+			header.header
+				.clearfix
+					.logo.header__logo
+						a.logo__link Exchanger
+					nav.nav.header__nav
+						ul.nav__list
+							li.nav__item
+								a.nav__link.nav__link_active
+									i.icon-notifications.nav__icon
+							li.nav__item
+								a.nav__link Logout
+									i.icon-log-out.nav__icon.icon_dark
+
+			.container
+
+				.top-form
+					form.form()
+						.form-group
+							.lbl I'd like to
+
+							select() sell
+								option buy
+
+							input.input(value="10,000")
+
+							select USD
+								option EUR
+								option GBR
+								option CHF
+
+							.lbl for
+
+							select USD
+								option EUR
+								option GBR
+								option CHF
+
+						.summ
+							.summ__text You'll get
+							.summ__value 1000 
+								span.summ__currency chf
+
+						button(type="submit" class="btn")
+							i.btn__icon.icon-exchange-icon 
+							span Exchange
+		.container
+			main.main
+				.clearfix
+					.col-6 
+						section
+							header.clearfix
+								h2 transaction
+								ul.tab-list
+									li.tab-list__item
+										a.tab-list__link This week
+									li.tab-list__item
+										a.tab-list__link This month
+									li.tab-list__item
+										a.tab-list__link This year
+							.chart
+
+					.col-4
+						section
+							table
+								tr
+									th
+									th
+									th
+									th
+									th
+								tr
+									td
+									td
+									td
+									td
+
+				.clearfix
+					.col-6
+						section
+							header
+								h2 Last Orders
+							table
+								tr
+									th Date
+									th Transaction ID
+									th Type
+									th Amount
+									th Exchange rate
+								tr
+									td
+									td
+									td
+									td
+					.col-4
+						section
+							header
+								h2 Invoices
+							table
+								tr
+									th Invoice ID
+									th Date
+									th PDF
+								tr
+									td
+									td
+									td
+									td
+
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous")
+		script(src="js/main.js")
+

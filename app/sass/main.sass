@@ -1,0 +1,218 @@
+@import "fonts"
+@import "vars"
+
+body,html
+    height: 100%
+    width: 100%
+    margin: 0
+    padding: 0
+
+body
+    font-family: 'Avenir Book', sans-serif
+    font-size: 12px
+    line-height: 1.5
+    font-weight: normal
+    background-color: #eaf0f3
+
+.clearfix:after 
+    content: ''
+    display: table
+    clear: both
+
+.col-6
+    width: 60%
+    float: left
+
+.col-4
+    width: 40%
+    float: left
+
+.list
+    margin: 0
+    padding: 0
+    list-style: none
+
+.link
+    text-decoration: none
+    &:hover
+        cursor: pointer
+
+.container
+    width: 1116px
+    margin: 0 auto
+
+//Header
+
+.wrapper
+    height: 350px
+    color: #fff
+    background: url(../img/bg-image.svg) no-repeat
+    background-size: cover
+    box-sizing: border-box
+
+.header
+    padding: 32px 50px 0 55px
+
+    &__logo
+        float: left
+        font-size: 1.667em
+        font-weight: bold
+
+    &__nav
+        float: right
+
+// Navigation
+
+.nav
+    &__list
+        @extend .list
+
+    &__item
+        display: inline-block
+        vertical-align: middle
+        padding-left: 45px
+        font-weight: bold
+
+    &__link
+        @extend .link
+
+        &_active
+            position: relative
+
+            &:after
+                content: ''
+                display: block
+                position: absolute
+                top: 0px
+                right: 0
+                width: 6px
+                height: 6px
+                background-color: #fa6d74
+                border: solid 2px #504ead
+                border-radius: 50%
+
+    &__icon
+        font-size: 1.333em
+        padding-left: 3px
+.icon_dark
+    color: #9390dc
+
+// Top - form
+
+.top-form
+    padding-top: 50px
+    text-align: right
+    *
+        display: inline-block
+        vertical-align: middle
+.input
+    display: inline-block
+    width: 69px
+    color: #fff
+    font-size: 1.833em
+    text-align: center
+    background-color: transparent
+    border: 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6)
+    &:focus
+        outline: none
+.form
+    text-align: left
+.select
+    position: relative
+    margin: 0 25px
+.select-styled
+    display: inline-block
+    padding: 4px 31px 4px 15px
+    color: #fff
+    font-size: 1.083em
+    letter-spacing: 0.5px
+    border-radius: 5px
+    background-color: rgba(255, 255, 255, 0.1)
+    border: solid 1px rgba(255, 255, 255, 0.3)
+    cursor: pointer
+    &:before
+        content: '\e800'
+        display: inline-block
+        position: absolute
+        top: 10px
+        right: 10px
+        font-size: .4em
+        font-family: "softengi"
+
+.select-options
+    display: none
+    position: absolute
+    top: 100%
+    right: 0
+    left: 0
+    z-index: 2
+    margin: 0
+    padding: 0
+    list-style: none
+    border-radius: 5px
+    background-color: rgba(255, 255, 255, 0.1)
+    border: inherit
+    cursor: pointer
+
+.select-hidden
+    display: none
+
+.select-options li[rel="hide"]
+    display: none
+
+.select-options li
+    display: block
+    margin: 0
+    padding: 5px 25px 5px 15px
+    font-size: 1.083em
+    border-top: 1px solid rgba(255, 255, 255, 0.3)
+    transition: all 0.15s ease-in
+
+.lbl
+    font-size: 1.167em
+    opacity: .6
+
+.form-group
+    border-right: 1px solid rgba(255, 255, 255, 0.2)
+    margin-right: 70px
+    padding-right: 45px// 70px - 25px
+
+.summ
+    margin-right: 25px
+    &__text
+        display: block
+        color: #fff
+        opacity: .6
+    &__value
+        display: inline-block
+        font-size: 1.667em
+        font-weight: bold
+        vertical-align: bottom
+    &__currency
+        font-size: 0.7em
+        text-transform: uppercase
+
+.btn
+    position: relative
+    display: inline-block
+    padding: 8px 25px
+    color: #2a2a44
+    font-size: 1.083em
+    font-weight: bold
+    border-radius: 5px
+    border: 0
+    background-color: linear-gradient(to bottom, #f1f1ff, #ffffff)
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2)
+    cursor: pointer
+    &__icon
+        font-size: 1.8em
+        color: #9a98e2
+
+//main
+.main
+    margin-top: -160px
+    padding: 41px 57px
+    background: #fff
+    border-radius: 10px
+

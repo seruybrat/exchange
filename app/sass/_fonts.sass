@@ -1,0 +1,52 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style)
+    @font-face
+        font-family: $font-family
+        src: url('#{$file-path}.woff')
+        src: url('#{$file-path}.ttf') format('truetype')
+        font-weight: $font-weight
+        font-style: $font-style
+
+@include font-face('softengi', '../fonts/icons/softengi', 300, normal)
+@include font-face('Avenir Book', '../fonts/avenir/Avenir-Book', 300, normal)
+
+[class^="icon-"], [class*=" icon-"]
+      font-family: "softengi"
+      font-style: normal
+      font-weight: normal
+      speak: none
+     
+      display: inline-block
+      text-decoration: inherit
+      width: 1em
+      margin-right: .2em
+      text-align: center
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal
+      text-transform: none
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em
+     
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+
+.icon-arrow:before 
+    content: '\e800'
+.icon-download:before 
+    content: '\e801'
+.icon-exchange-icon:before 
+    content: '\e802'
+.icon-log-out:before 
+    content: '\e803'
+.icon-notifications:before 
+    content: '\e804'
