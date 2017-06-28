@@ -5,7 +5,6 @@ body,html
     height: 100%
     width: 100%
     margin: 0
-    padding: 0
 
 body
     font-family: 'Avenir Book', sans-serif
@@ -19,14 +18,29 @@ body
     display: table
     clear: both
 
-.col-6
-    width: 60%
+.row
+    @extend .clearfix
+    margin: 0 -12px
+
+.col
     float: left
+    padding: 0 12px
+    box-sizing: border-box
+
+.col-7
+    @extend .col
+    width: 58.333%
+
+.col-6
+    @extend .col
+    width: 50%
 
 .col-4
-    width: 40%
-    float: left
-
+    @extend .col
+    width: 33.333%
+.col-offset-1
+    @extend .col
+    margin-left: 8.333%
 .list
     margin: 0
     padding: 0
@@ -34,25 +48,39 @@ body
 
 .link
     text-decoration: none
+    color: inherit
     &:hover
         cursor: pointer
+.title
+    margin: 0
+    font-size: 1em
+    font-weight: normal
+    text-transform: uppercase
+    text-align: left
+    color: #9797a4
 
 .container
     width: 1116px
     margin: 0 auto
 
+.table
+    margin-top: 30px
 //Header
 
-.wrapper
-    height: 350px
-    color: #fff
-    background: url(../img/bg-image.svg) no-repeat
+.bg-img
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: auto
+    width: 100%
     background-size: cover
     box-sizing: border-box
+    z-index: -1
 
 .header
     padding: 32px 50px 0 55px
-
+    color: #fff
     &__logo
         float: left
         font-size: 1.667em
@@ -60,6 +88,8 @@ body
 
     &__nav
         float: right
+.logo__link
+    @extend .link  
 
 // Navigation
 
@@ -100,7 +130,8 @@ body
 // Top - form
 
 .top-form
-    padding-top: 50px
+    margin: 50px 0 55px
+    color: #fff
     text-align: right
     *
         display: inline-block
@@ -166,6 +197,7 @@ body
     margin: 0
     padding: 5px 25px 5px 15px
     font-size: 1.083em
+    background-color: #8363b7
     border-top: 1px solid rgba(255, 255, 255, 0.3)
     transition: all 0.15s ease-in
 
@@ -211,8 +243,163 @@ body
 
 //main
 .main
-    margin-top: -160px
-    padding: 41px 57px
+    display: block
+    padding-bottom: 67px
+    margin-bottom: 30px
     background: #fff
     border-radius: 10px
 
+//transactions
+
+.transactions
+    margin-bottom: 30px
+    &__title
+        float: left
+    &__header
+        padding: 41px 57px 0
+        margin-bottom: 25px
+// tabs
+.tab-list
+    @extend .list
+    float: right
+    &__item
+        display: inline-block
+        margin: 0 12px
+        padding: 0 5px 10px
+        color: #bdbebf
+        box-sizing: border-box
+        &_active
+            color: #000
+            border-bottom: solid 1px #9795e4
+    &__link
+        @extend .link
+
+// Chart
+
+#line
+    width: 100% !important
+    height: 250px !important
+    margin-bottom: 30px
+    border-radius: 6px
+    background-image: linear-gradient(249deg, #8e78ff, #fc7d7b)
+    box-shadow: 0px 24px 17px -22px rgba(0,0,0,0.35)
+
+// Card
+
+.card
+    width: 100%
+    padding: 10px 0 14px
+    text-align: center
+    border-radius: 5px
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.05)
+    box-sizing: border-box
+    &__info
+        display: inline-block
+        vertical-align: middle
+    &__img
+        display: inline-block
+        padding-right: 15px
+        vertical-align: middle
+    &__text
+        color: #30304d
+        font-size: 0.833em
+        letter-spacing: 0.4px
+        text-transform: uppercase
+    &__pic
+        width: 32px
+        height: auto
+.currency
+    padding-right: 5px
+    color: #acacb8
+    font-size: 1.167em
+.value
+    font-size: 2em
+    font-weight: bold
+.symbol
+    font-size: 1.4em
+    font-weight: bold
+
+.section
+    margin-top: 57px
+    margin-left: -24px
+
+//table
+
+.flag-pic
+    display: inline block
+    vertical-align: middle
+    width: 20px
+    height: auto
+    margin-right: 10px
+.table
+    width: 80%
+    &__th
+        display: block
+        color: #c0c0c7
+        padding: 15px 0
+        white-space: nowrap
+        font-weight: bold
+        text-align: left
+        border-bottom: solid 1px rgba(111, 109, 204, 0.1)
+        &_center
+            text-align: center
+        
+    &__td
+        display: inline-block
+        width: 100%
+        padding: 10px 0
+        font-size: 1.167em
+        text-align: left
+        vertical-align: middle
+        &_center
+            text-align: center
+    &__icon
+        padding-left: 5px
+        font-size: .4em
+        font-weight: bold
+        color: #2a2a44
+        vertical-align: middle
+    &__flag
+        display: inline-block
+        width: 100%
+        padding: 10px
+        text-align: left
+        white-space: nowrap
+        box-sizing: border-box
+    &__currency
+        font-size: 0.917em
+        padding-right: 10px
+    &__val
+        display: inline-block
+        padding: 0 8px
+        font-size: 1.083em
+        color: #8b8b9a
+        &_light
+            color: #d4d4d9
+        &_down
+            position: relative
+            &:before
+                content: ''
+                display: block
+                position: absolute
+                top: 8px
+                left: 0
+                width: 0
+                height: 0
+                border-left: 3px solid transparent
+                border-right: 3px solid transparent
+                border-bottom: 3px solid #f96d74
+
+        &_up
+            position: relative
+            &:before
+                content: ''
+                display: block
+                position: absolute
+                top: 9px
+                left: 0
+                width: 0
+                height: 0
+                border-left: 3px solid transparent
+                border-right: 3px solid transparent
+                border-top: 3px solid #7edb8f

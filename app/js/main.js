@@ -1,3 +1,40 @@
+angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
+
+  $scope.labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
+  $scope.series = ['€ 25 k'];
+  $scope.data = [
+    [ 40, 70, 50, 45, 55, 65, 45, 50],
+  ];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }];
+  $scope.colors = [{
+    strokeColor: '#FFF',
+    highlightFill: '#FFF',
+    highlightStroke: '#FFF',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    pointBackgroundColor: 'rgba(255, 255, 255, 0.2)',
+}];
+  $scope.options = {
+    
+
+    scales: {
+      yAxes: [
+        {
+          id: 'y-axis-1',
+          type: 'linear',
+          display: false,
+          position: 'left'
+        }
+      ]
+    },
+  };
+});
+Chart.defaults.global.defaultFontColor = "#fff";
+Chart.defaults.global.defaultFontFamily = "Avenir Book";
+Chart.defaults.global.tooltips.backgroundColor= "#fff";
+
 (function() {
 
     // Custom select
