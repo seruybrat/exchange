@@ -7,11 +7,37 @@ body,html
     margin: 0
 
 body
+    min-width: 320px
     font-family: 'Avenir Book', sans-serif
     font-size: 12px
     line-height: 1.5
     font-weight: normal
     background-color: #eaf0f3
+
+// Animation
+
+@keyframes animate
+  0%
+    transform: translateY(-50px)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
+
+.anim
+    transform: translateY(-50px)
+    opacity: 0
+
+.animated
+    animation: animate .5s linear
+    transform: translateY(0)
+    opacity: 1
+
+// Grid
+
+.container
+    width: 1116px
+    margin: 0 auto
 
 .clearfix:after 
     content: ''
@@ -20,7 +46,6 @@ body
 
 .row
     @extend .clearfix
-    margin: 0 -12px
 
 .col
     float: left
@@ -38,9 +63,13 @@ body
 .col-4
     @extend .col
     width: 33.333%
+
 .col-offset-1
     @extend .col
     margin-left: 8.333%
+
+// Base
+
 .list
     margin: 0
     padding: 0
@@ -51,6 +80,7 @@ body
     color: inherit
     &:hover
         cursor: pointer
+
 .title
     margin: 0
     font-size: 1em
@@ -59,12 +89,9 @@ body
     text-align: left
     color: #9797a4
 
-.container
-    width: 1116px
-    margin: 0 auto
-
 .table
     margin-top: 30px
+
 //Header
 
 .bg-img
@@ -81,6 +108,7 @@ body
 .header
     padding: 32px 50px 0 55px
     color: #fff
+
     &__logo
         float: left
         font-size: 1.667em
@@ -88,8 +116,9 @@ body
 
     &__nav
         float: right
+
 .logo__link
-    @extend .link  
+    @extend .link
 
 // Navigation
 
@@ -124,6 +153,7 @@ body
     &__icon
         font-size: 1.333em
         padding-left: 3px
+
 .icon_dark
     color: #9390dc
 
@@ -133,9 +163,7 @@ body
     margin: 50px 0 55px
     color: #fff
     text-align: right
-    *
-        display: inline-block
-        vertical-align: middle
+
 .input
     display: inline-block
     width: 69px
@@ -147,11 +175,18 @@ body
     border-bottom: 1px solid rgba(255, 255, 255, 0.6)
     &:focus
         outline: none
+
 .form
     text-align: left
+    display: inline-block
+    vertical-align: middle
+
 .select
+    display: inline-block
+    vertical-align: middle
     position: relative
     margin: 0 25px
+
 .select-styled
     display: inline-block
     padding: 4px 31px 4px 15px
@@ -202,25 +237,34 @@ body
     transition: all 0.15s ease-in
 
 .lbl
+    display: inline-block
+    vertical-align: middle
     font-size: 1.167em
     opacity: .6
 
 .form-group
+    display: inline-block
+    vertical-align: middle
     border-right: 1px solid rgba(255, 255, 255, 0.2)
     margin-right: 70px
     padding-right: 45px// 70px - 25px
 
 .summ
+    display: inline-block
+    vertical-align: middle
     margin-right: 25px
+
     &__text
         display: block
         color: #fff
         opacity: .6
+
     &__value
         display: inline-block
         font-size: 1.667em
         font-weight: bold
         vertical-align: bottom
+
     &__currency
         font-size: 0.7em
         text-transform: uppercase
@@ -232,16 +276,25 @@ body
     color: #2a2a44
     font-size: 1.083em
     font-weight: bold
+    vertical-align: middle
     border-radius: 5px
     border: 0
     background-color: linear-gradient(to bottom, #f1f1ff, #ffffff)
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2)
     cursor: pointer
+
+    &__text
+        display: inline-block
+        vertical-align: middle
+
     &__icon
+        display: inline-block
+        vertical-align: middle
         font-size: 1.8em
         color: #9a98e2
 
-//main
+// Main
+
 .main
     display: block
     padding-bottom: 67px
@@ -249,7 +302,7 @@ body
     background: #fff
     border-radius: 10px
 
-//transactions
+// Transactions
 
 .transactions
     margin-bottom: 30px
@@ -258,10 +311,13 @@ body
     &__header
         padding: 41px 57px 0
         margin-bottom: 25px
-// tabs
+
+// Tabs
+
 .tab-list
     @extend .list
     float: right
+
     &__item
         display: inline-block
         margin: 0 12px
@@ -271,6 +327,7 @@ body
         &_active
             color: #000
             border-bottom: solid 1px #9795e4
+
     &__link
         @extend .link
 
@@ -293,28 +350,35 @@ body
     border-radius: 5px
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.05)
     box-sizing: border-box
+
     &__info
         display: inline-block
         vertical-align: middle
+
     &__img
         display: inline-block
         padding-right: 15px
         vertical-align: middle
+
     &__text
         color: #30304d
         font-size: 0.833em
         letter-spacing: 0.4px
         text-transform: uppercase
+
     &__pic
         width: 32px
         height: auto
+
 .currency
     padding-right: 5px
     color: #acacb8
     font-size: 1.167em
+
 .value
     font-size: 2em
     font-weight: bold
+
 .symbol
     font-size: 1.4em
     font-weight: bold
@@ -323,7 +387,7 @@ body
     margin-top: 57px
     margin-left: -24px
 
-//table
+// Table
 
 .flag-pic
     display: inline block
@@ -331,8 +395,10 @@ body
     width: 20px
     height: auto
     margin-right: 10px
+
 .table
     width: 80%
+
     &__th
         display: block
         color: #c0c0c7
@@ -341,9 +407,10 @@ body
         font-weight: bold
         text-align: left
         border-bottom: solid 1px rgba(111, 109, 204, 0.1)
+
         &_center
             text-align: center
-        
+
     &__td
         display: inline-block
         width: 100%
@@ -351,14 +418,17 @@ body
         font-size: 1.167em
         text-align: left
         vertical-align: middle
+
         &_center
             text-align: center
+
     &__icon
         padding-left: 5px
         font-size: .4em
         font-weight: bold
         color: #2a2a44
         vertical-align: middle
+
     &__flag
         display: inline-block
         width: 100%
@@ -366,16 +436,20 @@ body
         text-align: left
         white-space: nowrap
         box-sizing: border-box
+
     &__currency
         font-size: 0.917em
         padding-right: 10px
+
     &__val
         display: inline-block
         padding: 0 8px
         font-size: 1.083em
         color: #8b8b9a
+
         &_light
             color: #d4d4d9
+
         &_down
             position: relative
             &:before
@@ -403,3 +477,6 @@ body
                 border-left: 3px solid transparent
                 border-right: 3px solid transparent
                 border-top: 3px solid #7edb8f
+
+// Media
+@import "media"

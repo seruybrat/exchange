@@ -2,14 +2,9 @@ var gulp       = require('gulp'),
     sass         = require('gulp-sass'),
     browserSync  = require('browser-sync').create(),
     jade         = require('gulp-jade'),
-    concat       = require('gulp-concat'),
-    uglify       = require('gulp-uglifyjs'),
-    rename       = require('gulp-rename'),
     del          = require('del'),
     cache        = require('gulp-cache'),
-    autoprefixer = require('gulp-autoprefixer'),
-    imagemin     = require('gulp-imagemin'),
-    pngquant     = require('imagemin-pngquant');
+    autoprefixer = require('gulp-autoprefixer');
 
 
 gulp.task('browser-sync', ['styles', 'scripts', 'jade'], function() {
@@ -41,10 +36,8 @@ gulp.task('jade', function() {
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'app/js/common.js',
+        'app/js/*.js',
         ])
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('app/js'));
 });
 
@@ -61,26 +54,21 @@ gulp.task('clean', function() {
 
 gulp.task('img', function() {
     return gulp.src('app/img/**/*')
-        .pipe(cache(imagemin({
-            interlaced: true,
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        })))
         .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('build', ['clean', 'img', 'styles', 'scripts'], function() {
 
     var buildCss = gulp.src([
-        'app/css/main.css'
+        'app/css/main.css',
+        'app/css/start.css',
         ])
     .pipe(gulp.dest('dist/css'))
 
     var buildFonts = gulp.src('app/fonts/**/*')
     .pipe(gulp.dest('dist/fonts'))
 
-    var buildJs = gulp.src('app/js/common.min.js')
+    var buildJs = gulp.src('app/js/**/*.js')
     .pipe(gulp.dest('dist/js'))
 
     var buildHtml = gulp.src('app/*.html')

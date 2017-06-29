@@ -1,52 +1,71 @@
-$md: 1030px
-$sm: 690px
-$xs: 430px
+$lg: 1116px
+$md: 1024px
+$sm: 768px
+$xs: 480px
 
-.visible-sm
-    display: none
+
+@media (max-width: $lg)
+
+    .container
+        width: 100%
+        padding: 0 10px
+        box-sizing: border-box
 
 @media (max-width: $md)
 
-    .main-wrap
+    body
+        background-color: #8a5fbe
+
+    .bg-img
+        display: none
+
+    .top-form, .form
+        text-align: center
+
+    .form-group
+        display: block
+        margin-right: 0
+        border-right: 0
+        padding-right: 0
+        margin-bottom: 20px
+
+    .col-md-10
+        width: 83.333%
+
+    .col-md-12
+        width: 100%
+
+    .table
+        width: 100%
+
+@media (max-width: $sm)
+    
+    body
+        font-size: 10px
+
+    .container
         padding: 0
 
     .main
-        width: 100%
-
-    .nav
         border-radius: 0
 
-    .slider
-        border-radius: 0
+    .select
+        margin: 0 10px
 
-@media (max-width: $sm)
-
-    .hide-sm
-        display: none
-
-    .visible-sm
-        display: block
-
-    .before-after__img-out
-        img
-            height: 100%
-
-    .before-after__window
-        width: 70%
-        height: 200px
-
-    .range__bar
-        width: 150px
-
-    .panel
-        text-align: left
-        padding-left: 50px
+    #line
+        height: 180px !important
 
 @media (max-width: $xs)
 
-    .main
-        min-width: 320px
-        width: auto
+    .header
+        padding: 32px 10px 0 10px
 
-    .hide-xs
-        display: none
+    .input
+        width: 50px
+        font-size: 1.2em
+
+    .select-styled
+        padding: 4px 20px 4px 5px
+
+    .transactions__header
+        padding: 41px 10px 0
